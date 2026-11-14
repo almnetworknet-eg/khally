@@ -1,0 +1,30 @@
+name: Build APKs
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: android-actions/setup-android@v3
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.11.1"
+      - name: Build APKs
+        run: gradle :parent:assembleDebug :child:assembleDebug --stacktrace
+      - name: Collect APKs
+        run: |
+          mkdir out
+          cp parent/build/outputs/apk/debug/parent-debug.apk out/KhallyBalak-Parent.apk
+          cp child/build/outputs/apk/debug/child-debug.apk out/KhallyBalak-Child.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KhallyBalak-APKs
+          path: out/
