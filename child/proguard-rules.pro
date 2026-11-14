@@ -1,0 +1,3 @@
+-keep class com.khallybalak.shared.** { *; }
+-keep class com.khallybalak.child.AdminReceiver { *; }
+-keep class com.khallybalak.child.GuardAccessibilityService { *; }

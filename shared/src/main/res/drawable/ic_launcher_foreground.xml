@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- درع -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,26 L76,34 L76,52 C76,66 66,78 54,82 C42,78 32,66 32,52 L32,34 Z" />
+    <!-- قلب -->
+    <path
+        android:fillColor="#00796B"
+        android:pathData="M54,66 C46,60 42,56 42,50.5 C42,46.9 44.8,44 48.2,44 C50.6,44 52.6,45.3 54,47.3 C55.4,45.3 57.4,44 59.8,44 C63.2,44 66,46.9 66,50.5 C66,56 62,60 54,66 Z" />
+</vector>
